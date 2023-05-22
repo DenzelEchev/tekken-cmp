@@ -57,7 +57,7 @@ exports.logout = (req, res) => {
 };
 
 exports.getRegister = (req, res) => {
-  if (req.user) {
+  if (!req.user) {
     return res.redirect("/register");
   }
   res.render("register.njk", {
@@ -89,7 +89,9 @@ exports.postRegister = (req, res, next) => {
     userName: req.body.userName,
     email: req.body.email,
     character: req.body.character,
-    password: req.body.password
+    password: req.body.password,
+    rank: 0,
+    sessionCompleted: 0
   });
 
   User.findOne(

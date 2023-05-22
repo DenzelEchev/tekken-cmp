@@ -5,6 +5,8 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   character: { type: String },
+  rank: { type: Number },
+  sessionCompleted: { type: Number },
   password: String,
 });
 
