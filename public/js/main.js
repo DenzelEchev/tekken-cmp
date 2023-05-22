@@ -43,16 +43,31 @@ function handleButtons(buttons) {
   }
 }
 
-function checkInput(){
-    if(inputArray.length === correctArray.length){
-        console.log(inputArray, correctArray)
-        return inputArray === correctArray ? completed+1 : failed+1
-    }else if(inputArray.includes(7)){
-        inputArray = []
-    }else{
+// function checkInput(){
+//     if(inputArray.length === correctArray.length){
+//         return inputArray === correctArray ? completed+1 : failed+1
+//     }else if(inputArray.includes(7)){
+//         inputArray = []
+//     }else{
 
+//     }
+// }
+
+function checkInput() {
+    if (inputArray.length === correctArray.length) {
+      if (inputArray.every((element, index) => element === correctArray[index])) {
+        completed += 1;
+      } else {
+        failed += 1;
+      }
+      inputArray = [];
+    } else if (inputArray.includes(7)) {
+      inputArray = [];
+    } else {
+      // possible other conditions if needed
     }
-}
+  }
+  
 
 function completeSession(){
     if(completed + failed === 30){
