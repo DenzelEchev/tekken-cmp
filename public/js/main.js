@@ -71,11 +71,32 @@ function checkInput() {
   }
   
 
-function completeSession(){
-    if(completed + failed === 30){
-
+function completeSession() {
+    if (completed + failed === 30) {
+      submitResults(completed, failed);
     }
 }
+
+function submitResults(completed, failed) {
+    const data = {
+      completed: completed,
+      failed: failed
+    };
+  
+    fetch('/update-rank', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        console.log(req.body)
+      })
+      .catch(error => {
+      });
+  }
+  
 
 function updateStick(elementId, leftRightAxis, upDownAxis) {
   const multiplier = 25;
