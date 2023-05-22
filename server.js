@@ -20,6 +20,7 @@ require("./config/passport")(passport);
 //Connect To Database
 connectDB();
 
+//Using EJS for views
 app.set("view engine", "nunjucks");
 
 //Static Folder
@@ -38,7 +39,7 @@ app.use(methodOverride("_method"));
 // Setup Sessions - stored in MongoDB
 app.use(
   session({
-    secret: "lucky chloe",
+    secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
