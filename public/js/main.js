@@ -32,7 +32,6 @@ function handleButtons(buttons) {
           buttonElement.classList.add(selectedButtonClass);
           buttonElement.style.filter = `contrast(${button.value * 150}%)`;
           // button pressed info
-          console.log(`Button ${i} pressed.`);
           inputArray.push(i)
         }
       } else {
@@ -46,6 +45,7 @@ function handleButtons(buttons) {
 
 function checkInput(){
     if(inputArray.length === correctArray.length){
+        console.log(inputArray, correctArray)
         return inputArray === correctArray ? completed+1 : failed+1
     }else if(inputArray.includes(7)){
         inputArray = []
