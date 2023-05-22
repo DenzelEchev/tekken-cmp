@@ -1,6 +1,6 @@
 let controllerIndex = null;
 let inputArray = []
-let correctArray = [14, 13, 14]
+let correctArray = [14, 13, 14, 13]
 let completed = 0
 let failed = 0
 document.querySelector('.completed').innerText = completed
