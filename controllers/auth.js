@@ -57,7 +57,7 @@ exports.logout = (req, res) => {
 };
 
 exports.getRegister = (req, res) => {
-  if (!req.user) {
+  if (req.user) {
     return res.redirect("/register");
   }
   res.render("register.njk", {
