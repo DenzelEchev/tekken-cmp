@@ -56,11 +56,11 @@ function handleButtons(buttons) {
 function checkInput() {
     if (inputArray.length === correctArray.length) {
       if (inputArray.every((element, index) => element === correctArray[index])) {
-        console.log(inputArray)
-        completed += 1;
+          completed += 1;
+          console.log(completed)
       } else {
-        console.log(inputArray)
-        failed += 1;
+          failed += 1;
+          console.log(failed)
       }
       inputArray = [];
     } else if (inputArray.includes(7)) {
