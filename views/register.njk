@@ -1,0 +1,97 @@
+
+{% include 'partials/header.njk' %}
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Time to clean up your Tekken Movement</h1>
+        <p class="col-lg-10 fs-4">TKN MVT, or the Tekken Movement tool designed by Denzel Echevarria as a way to give back to the Fighting Game Community and help those Tekken Players out who don't have the best movement skills or just want help cleaning up their inputs.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+
+        <form class="p-4 p-md-5 border rounded-3 bg-light" action="/register" method="POST">
+
+          <div class="form-floating mb-3">
+            <input type="username" class="form-control" id="userName" placeholder="User Name" name="userName">
+            <label for="floatingInput">User Name</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+            <label for="floatingInput">Email address</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword">
+            <label for="floatingPassword">Confirm Password</label>
+          </div>
+
+          <div class="form-floating mb 5">
+            <select name="character" id="character" class="mb 5">
+                <option value="Akuma">Akuma</option>
+                <option value="Alisa Bosconovitch">Alisa Bosconovitch</option>
+                <option value="Anna Williams">Anna Williams</option>
+                <option value="Armor King">Armor King</option>
+                <option value="Asuka Kazama">Asuka Kazama</option>
+                <option value="Bob Richards">Bob Richards</option>
+                <option value="Bryan Fury">Bryan Fury</option>
+                <option value="Claudio Serafino">Claudio Serafino</option>
+                <option value="Devil Jin">Devil Jin</option>
+                <option value="Dragunov">Dragunov</option>
+                <option value="Eddy Gordo">Eddy Gordo</option>
+                <option value="Eliza">Eliza</option>
+                <option value="Fahkumram">Fahkumram</option>
+                <option value="Feng Wei">Feng Wei</option>
+                <option value="Ganryu">Ganryu</option>
+                <option value="Geese Howard">Geese Howard</option>
+                <option value="Gigas">Gigas</option>
+                <option value="Heihachi Mishima">Heihachi Mishima</option>
+                <option value="Hwoarang">Hwoarang</option>
+                <option value="Jack-7">Jack-7</option>
+                <option value="Josie Rizal">Josie Rizal</option>
+                <option value="Jin Kazama">Jin Kazama</option>
+                <option value="Julia Chang">Julia Chang</option>
+                <option value="Katarina Alves">Katarina Alves</option>
+                <option value="Kazumi Mishima">Kazumi Mishima</option>
+                <option value="Kazuya Mishima">Kazuya Mishima</option>
+                <option value="King">King</option>
+                <option value="Kuma">Kuma</option>
+                <option value="Kunimitsu">Kunimitsu</option>
+                <option value="Lars Alexandersson">Lars Alexandersson</option>
+                <option value="Lee Chaolan">Lee Chaolan</option>
+                <option value="Lei Wulong">Lei Wulong</option>
+                <option value="Leo Kliesen">Leo Kliesen</option>
+                <option value="Lili Rochefort">Lili Rochefort</option>
+                <option value="Lucky Chloe">Lucky Chloe</option>
+                <option value="Marshall Law">Marshall Law</option>
+                <option value="Miguel Caballero Rojo">Miguel Caballero Rojo</option>
+                <option value="Negan">Negan</option>
+                <option value="Nina Williams">Nina Williams</option>
+                <option value="Noctis Lucis Caelum">Noctis Lucis Caelum</option>
+                <option value="Panda">Panda</option>
+                <option value="Paul Phoenix">Paul Phoenix</option>
+                <option value="Shaheen">Shaheen</option>
+                <option value="Steve Fox">Steve Fox</option>
+                <option value="Wang Jinrei">Wang Jinrei</option>
+                <option value="Ling Xiaoyu">Ling Xiaoyu</option>
+                <option value="Yoshimitsu">Yoshimitsu</option>
+                <option value="Zafina">Zafina</option>
+            </select>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-danger mt-3" type="submit">Sign up</button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+
+      </div>
+    </div>
+  </div>
+    
+    
+{% include "partials/footer.njk" %}

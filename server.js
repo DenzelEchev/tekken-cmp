@@ -1,4 +1,5 @@
 const express = require("express");
+const nunjucks = require('nunjucks')
 const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -9,7 +10,7 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const postRoutes = require("./routes/posts");
+const postRoutes = require("./routes/post");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -20,8 +21,10 @@ require("./config/passport")(passport);
 //Connect To Database
 connectDB();
 
-//Using EJS for views
-app.set("view engine", "nunjucks");
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
 
 //Static Folder
 app.use(express.static("public"));
@@ -39,7 +42,7 @@ app.use(methodOverride("_method"));
 // Setup Sessions - stored in MongoDB
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: "con queso",
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
