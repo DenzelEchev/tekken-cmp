@@ -5,13 +5,17 @@ const PlayerStatsSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  userName: {
+    type: String,
+    default: "",
+  },
   rank: {
     type: Number,
     default: 0,
   },
   sessionCompleted: {
     type: Number,
-    default: 0,
+    default: 1,
   },
   character: {
     type: String,

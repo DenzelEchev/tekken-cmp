@@ -46,6 +46,7 @@ module.exports = {
         // If playerStats document doesn't exist, create a new one
         playerStats = new PlayerStats({
           user: user._id,
+          userName: user.userName,
           rank: user.rank,
           sessionCompleted: completed,
           character: user.character
