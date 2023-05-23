@@ -32,6 +32,7 @@ module.exports = {
       }
   
       user.rank += completed - failed;
+      user.sessionCompleted += 1
       await user.save();
   
       let playerStats = await PlayerStats.findOne({ user: user._id });
@@ -39,12 +40,12 @@ module.exports = {
       if (playerStats) {
         // If playerStats document exists, update the rank and sessionCompleted
         playerStats.rank = user.rank;
-        playerStats.sessionCompleted += completed;
         await playerStats.save();
       } else {
         // If playerStats document doesn't exist, create a new one
         playerStats = new PlayerStats({
           user: user._id,
+          userName: user.userName,
           rank: user.rank,
           sessionCompleted: completed,
           character: user.character

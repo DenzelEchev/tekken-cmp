@@ -15,7 +15,7 @@ const PlayerStatsSchema = new mongoose.Schema({
   },
   sessionCompleted: {
     type: Number,
-    default: 1,
+    default: 0,
   },
   character: {
     type: String,
