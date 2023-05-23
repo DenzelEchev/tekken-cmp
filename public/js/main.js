@@ -69,8 +69,29 @@ function completeSession() {
 }
 
 function submitResults(completed, failed) {
-    
-}
+    const data = {
+      completed: completed,
+      failed: failed
+    };
+  
+    fetch('/updatedRank', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Results submitted!');
+        } else {
+          console.error('Failed to submit.');
+        }
+      })
+      .catch(err => {
+        console.error('An error occurred while submitting results:', err);
+      });
+  }
   
 
 function updateStick(elementId, leftRightAxis, upDownAxis) {
