@@ -25,20 +25,19 @@ module.exports = {
     try {
       const { userName } = req.user;
   
-      const user = await User.findOne({ user: user._id });
+      const user = await User.findOne({ userName });
   
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
   
       user.rank += completed - failed;
-      user.sessionCompleted + 1
       await user.save();
   
-      let playerStats = await PlayerStats.findOne({ userName });
+      let playerStats = await PlayerStats.findOne({ user: user._id });
   
       if (playerStats) {
-        // If playerStats document exists, update the rank and sessionCompleted ONLY
+        // If playerStats document exists, update the rank and sessionCompleted
         playerStats.rank = user.rank;
         playerStats.sessionCompleted += completed;
         await playerStats.save();
@@ -46,7 +45,6 @@ module.exports = {
         // If playerStats document doesn't exist, create a new one
         playerStats = new PlayerStats({
           user: user._id,
-          userName: user.userName,
           rank: user.rank,
           sessionCompleted: completed,
           character: user.character
