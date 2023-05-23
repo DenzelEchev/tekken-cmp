@@ -64,6 +64,8 @@ function checkInput() {
 
 function completeSession() {
     if (completed + failed === 30) {
+        completed = 0
+        failed = 0
       submitResults(completed, failed);
     }
 }
