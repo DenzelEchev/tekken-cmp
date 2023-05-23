@@ -300,32 +300,19 @@
         </div>
     </div>
 
-    {# <div class="d-flex flex-column justify-content-center align-items-center">
-        <div>
-            <a href="/" class="btn btn-danger">Complete</a>
-        </div>
-        <div class="px-3">
-                <p class="mb-2 h5 completed text-center"></p>
-                <p class="text-muted mb-0">Completed</p>
-        </div>
-        <div class="px-3">
-                <p class="mb-2 h5 failed text-center"></p>
-                <p class="text-muted mb-0">Failed</p>
-        </div>
-    </div> #}
     <form action="/submit" method="POST">
         <div class="d-flex flex-column justify-content-center align-items-center">
             <div class="px-3">
-                <input type="number" class="form-control mb-2 completed" name="completed" placeholder="Completed">
-                <p class="text-muted mb-0">Completed</p>
+                <h3 class="completed text-center"></h3>
+                <input type="hidden" class="form-control mb-2 completed" name="completed" placeholder="Completed">
+                <p class="text-muted mb-0 text-center">Completed</p>
             </div>
-            
+
             <div class="px-3">
-                <input type="number" class="form-control mb-2 failed" name="failed" placeholder="Failed">
-                <p class="text-muted mb-0">Failed</p>
+                <h3 class="failed text-center"></h3>
+                <input type="hidden" class="form-control mb-2 failed" name="failed" placeholder="Failed">
+                <p class="text-muted mb-0 text-center">Failed</p>
             </div>
-            
-            <a href="/" class="btn btn-danger">Complete</a>
         </div>
     </form>
 </div>
