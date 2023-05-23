@@ -3,11 +3,14 @@
 <section class="vh-100" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-12 col-xl-4">
+      <div class="col-md-12 col-xl-8">
         <div class="card" style="border-radius: 15px;">
           <div class="card-body text-center">
             <a href="/logout" class="btn btn-outline-secondary position-absolute top-0 start-0 mt-3 ms-3" id="logoutButton">
               Logout
+            </a>
+            <a href="/logged/leaderboard" class="btn btn-outline-secondary position-absolute top-0 end-0 mt-3 me-3" id="leaderboardButton">
+              Leaderboard
             </a>
             <div class="mt-3 mb-4">
               <img src="" class="rounded-circle img-fluid" style="width: 100px;" />
@@ -31,5 +34,6 @@
     </div>
   </div>
 </section>
+
 
 {% include 'partials/footer.njk' %}

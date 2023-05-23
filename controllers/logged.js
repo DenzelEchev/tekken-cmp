@@ -10,7 +10,7 @@ module.exports = {
     }
   },
 
-  getFeed: async (req, res) => {
+  getDojo: async (req, res) => {
     try {
       res.render("training.njk");
     } catch (err) {
@@ -18,6 +18,14 @@ module.exports = {
     }
   },
 
+  getLeaderboard: async (req, res) => {
+    try {
+      const players = await PlayerStats.find().sort({ rank: "desc" }).lean();
+      res.render("leaderboard.njk", { players: players });
+    } catch (err) {
+      console.log(err, 'cannot find');
+    }
+  },
 
   updateRank: async (req, res) => {
     const { completed, failed } = req.body;
