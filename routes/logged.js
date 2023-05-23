@@ -4,14 +4,6 @@ const upload = require("../middleware/multer");
 const loggedController = require("../controllers/logged");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Post Routes - simplified for now
-
-// router.get("/:id", ensureAuth, postsController.getPost);
-
 router.post('/update-rank', loggedController.updateRank);
-
-// router.put("/likePost/:id", postsController.likePost);
-
-// router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;
