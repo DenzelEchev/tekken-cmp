@@ -3,8 +3,7 @@ let inputArray = []
 let correctArray = [14, 13, 14, 13]
 let completed = 0
 let failed = 0
-document.querySelector('.completed').innerText = completed
-document.querySelector('.failed').innerText = failed
+
 
 const buttonState = {}; // Store the state of each button
 
@@ -44,6 +43,8 @@ function handleButtons(buttons) {
 }
 
 function checkInput() {
+    document.querySelector('.completed').innerText = completed
+    document.querySelector('.failed').innerText = failed
     if (inputArray.length === correctArray.length) {
       if (inputArray.every((element, index) => element === correctArray[index])) {
           completed += 1;
@@ -56,7 +57,7 @@ function checkInput() {
     } else if (inputArray.includes(7)) {
       inputArray = [];
     } else {
-      // possible other conditions if needed
+      
     }
   }
   
