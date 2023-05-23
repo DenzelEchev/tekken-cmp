@@ -74,7 +74,7 @@ function submitResults(completed, failed) {
       failed: failed
     };
   
-    fetch('/updateRank', {
+    fetch('/logged/updateRank', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
