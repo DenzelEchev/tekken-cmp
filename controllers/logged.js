@@ -25,7 +25,7 @@ module.exports = {
     try {
       const { userName } = req.user;
   
-      const user = await User.findOne({ userName });
+      const user = await User.findOne({ user: user._id });
   
       if (!user) {
         return res.status(404).json({ error: "User not found" });
@@ -35,7 +35,7 @@ module.exports = {
       user.sessionCompleted + 1
       await user.save();
   
-      let playerStats = await PlayerStats.findOne({ user: user._id });
+      let playerStats = await PlayerStats.findOne({ userName });
   
       if (playerStats) {
         // If playerStats document exists, update the rank and sessionCompleted ONLY
