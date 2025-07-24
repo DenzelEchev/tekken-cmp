@@ -1,4 +1,4 @@
-# Notice: This will be updated to React before the end of 2024 Using Remix
+# Notice: This app will transition to a full stack React App
 
 ## Install
 
